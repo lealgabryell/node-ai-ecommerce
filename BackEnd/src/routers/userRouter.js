@@ -1,9 +1,7 @@
 import express from 'express';
 const router = express.Router();
-
-router.route('/:id')
-  .get(() => console.log("GET user/:id"));
+import insertOne from "../controllers/userController.js"
 router.route('/')
-  .get(() => console.log("GET user/"));
+  .post((req, res) => insertOne(req, res));
 
 export default router
